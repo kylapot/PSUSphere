@@ -21,7 +21,7 @@ template_name = "home.html"
 class OrganizationList(ListView):
     model = Organization
     context_object_name = "organization"
-    template_name = 'org_list.html'
+    template_name = 'organization_list.html'
     paginate_by = 5
 
     def get_queryset(self, *args, **kwargs):
@@ -36,7 +36,7 @@ class OrganizationList(ListView):
 class OrganizationCreateView(CreateView):
     model = Organization
     form_class = OrganizationForm
-    template_name = 'org_form.html'
+    template_name = 'org_add.html'
     success_url = reverse_lazy('organization-list')
 
 class OrganizationUpdateView(UpdateView):
@@ -47,6 +47,6 @@ class OrganizationUpdateView(UpdateView):
 
 class OrganizationDeleteView(DeleteView):
     model = Organization
-    template_name = 'org_delete.html'
+    template_name = 'org_del.html'
     success_url = reverse_lazy('organization-list')
 # Create your views here.
