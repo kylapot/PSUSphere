@@ -6,13 +6,13 @@
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-header">
-                            <div class="card-title">List of Organizations</div> 
+                            <div class="card-title">List of College</div> 
                             <div class="card-category">Page Subtitle</div>
                     </div>
                     <br />
                     <div class="col-md-12 row">
                         <div class="col-md-6">
-                            <form class="navbar-left navbar-form nav-search mr-md-3" action="{% url 'organization-list' %}">                                
+                            <form class="navbar-left navbar-form nav-search mr-md-3" action="{% url 'college-list' %}">                                
                                 <input type="text" placeholder="Search ..." class="form-control" name="q" />                                  
                                   <div class="input-group-append">
                                         <span class="input-group-text">
@@ -24,7 +24,7 @@
                         </div>
                         <div class="col-md-6">
                             <div class="pull-right">
-                                <a href="{% url 'organization-add' %}" class="btn btn-success btn-rounded">Add Organization</a>
+                                <a href="{% url 'college-add' %}" class="btn btn-success btn-rounded">Add College List</a>
                             </div>
                         </div>
                     </div>
@@ -32,22 +32,17 @@
                         <table class="table table-striped mt-3">
                         <thead> 
                             <tr>
-                                <th scope="col">Name</th>
-                                <th scope="col">College</th>
-                                <th scope="cor">Description</th>
-                                <th scope="cor">Action</th>
+                                <th scope="col">College Name</th>
                             </tr> 
                         </thead> 
                         <tbody>
                             {% for object in object_list %}
                             <tr>
-                                <td>{{ object.name }}</td>
-                                <td>{{ object.college }}</td>
-                                <td>{{ object.description }}</td>
+                                <td>{{ object.college_name }}</td>
                                 
                                 <td>
-                                    <a href="organization_list/{{ object.id }}">Edit</a>
-                                    <a href="organization_list/{{ object.id}}/delete" class="text-danger">Delete</a> 
+                                    <a href="college_list/{{ object.id }}">Edit</a>
+                                    <a href="college_list/{{ object.id}}/delete" class="text-danger">Delete</a> 
                                 </td>
                             </tr>
                             {% empty %}
